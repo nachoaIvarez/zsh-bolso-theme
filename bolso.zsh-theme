@@ -1,7 +1,6 @@
-# AVIT ZSH Theme
+# NACHO ZSH Theme
 
-PROMPT='
-$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
+PROMPT='$(_user_host)${_current_dir} $(git_prompt_info)
 ❯ '
 
 PROMPT2='%{$fg[grey]%}❮%{$reset_color%} '
@@ -26,12 +25,6 @@ function _user_host() {
 function _vi_status() {
   if {echo $fpath | grep -q "plugins/vi-mode"}; then
     echo "$(vi_mode_prompt_info)"
-  fi
-}
-
-function _ruby_version() {
-  if {echo $fpath | grep -q "plugins/rvm"}; then
-    echo "%{$fg[grey]%}$(rvm_prompt_info)%{$reset_color%}"
   fi
 }
 
@@ -99,4 +92,3 @@ ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[grey]%}"
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 export GREP_COLOR='1;33'
-
